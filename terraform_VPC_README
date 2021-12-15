@@ -1,0 +1,49 @@
+HOW TO INSTALL TERRAFORM 
+
+WINDOWS:
+    * On your internet browser, navigate to "https://www.terraform.io/downloads"
+    * select the Windows download, be sure to select the proper option from 32-bit and 64-bit
+    * Extract the contents of the zipped folder once it has finished downloading, store it wherever you would like
+    * Copy the 'terraform' file from the downloaded unzipped folder
+    * Create a new directory wherever you would like and name it "Terraform" then paste the 'terraform' file into that directory
+    * Navigate to "Edit the system environment variables" inside the Control Panel
+    * Select "Environment Variables"
+    * Under "System Variables", select the variable "Path" and click on "Edit"
+    * Click "New" and set the path to the directory you created named "Terraform" and click Ok.
+    * Open Command Prompt and enter "terraform -v", if you see a version of Terraform in the output, then you successfully installed Terraform on your Windows machine
+
+MAC:
+    * Install Homebrew by using the following command:
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    * Open Terminal and enter the command above
+    * Enter your Password to install, hit Return to continue the installation
+    * Once Homebrew is installed, you can use Homebrew to install Terraform
+    * In the Terminal, enter "brew install terraform" , This will install Terraform using Homebrew
+    * Enter "terraform -v" to verify the download 
+    * If the terminal returns the Terraform version, then you successfully installed Terraform on your Mac machine
+
+
+This project will reference variables located in the "variables.tf" file
+"variables.tf" will hold the variables for the various CIDR values needed throughout the main program
+"vpc.tfvars" will assign the actual values for the variables located in "variables.tf". In other words, you can find the actual CIDR values in "vpc.tfvars"
+A variable for the environment is also in the "variables.tf" file, this variable references the type of environment the user is working with.
+
+
+This project will create an AWS VPC module by using Terraform
+The AWS VPC contains the following:
+    An AWS provider with the region set to us-east-2 (Ohio)
+    An S3 backend that points to the "carlos-nclouds-bucket" in us-west-2 (Oregon)
+    an AWS VPC (virtual private cloud)
+    3 private subnets
+    3 public subnets 
+    1 internet gateway
+    1 elastic ip
+    1 NAT gateway
+    1 private route table associated with the 3 private subnets
+    1 public route table associated with the 3 public subnets
+
+Once you configure your AWS account to whichever Terminal you decide to use for this project, whether that be VSCode, Mac Terminal, or Windows
+Use "terraform init" to initialize Terraform in the terminal
+"terraform plan" will generate a sort of "road map" that previews what exactly running the Terraform files will do.
+"terraform apply" will apply all the commands and or changes in all the files ending in ".tf" located in your working directory
+"terraform destroy" will delete anything created by running this project.
