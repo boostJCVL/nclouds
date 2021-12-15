@@ -1,0 +1,8 @@
+vpc_cidr = "12.0.0.0/16"
+privSN1_cidr = "12.0.1.0/24"
+privSN2_cidr = "12.0.2.0/24"
+privSN3_cidr = "12.0.3.0/24"
+pubSN1_cidr = "12.0.4.0/24"
+pubSN2_cidr = "12.0.5.0/24"
+pubSN3_cidr = "12.0.6.0/24"
+env = "testing"
