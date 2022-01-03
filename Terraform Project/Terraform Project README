@@ -1,0 +1,10 @@
+This Terraform Project is designed to create a Virtual Private Cloud (VPC) that contains 3 public subnets as well as 3 private subnets on AWS.
+The “loadbalancer” module will create a load balanced website by using web servers that will run Nginx.
+An Elastic File System (EFS) will host the website itself by pulling resources from Amazon S3.
+The Autoscaling group will ensure high availability in case an availability zone somehow goes offline.
+
+Instructions
+git clone https://github.com/oneboostedboy/nclouds/tree/main/Terraform%20Project
+cd Terraform Project
+terraform init
+terraform apply -var-file=./config.vars.tfvars
